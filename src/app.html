@@ -1,0 +1,49 @@
+<template>
+
+    <!-- Body content -->
+    <div class="container">
+        <h3>Aurelia JS Boilerplate - Customer Info</h3>
+
+        <form submit.trigger="addCustomer()">
+            <input type="text" class="u-full-width" placeholder="Name" maxlength="64" value.bind="customerName">
+            <input type="tel" class="u-full-width" placeholder="Phone" maxlength="16" value.bind="customerPhone">
+            <input type="number" class="u-full-width" placeholder="Age" maxlength="4" value.bind="customerAge">
+            <input type="email" class="u-full-width" placeholder="Email" maxlength="96" value.bind="customerEmail">
+            <button type="submit" class="u-full-width">Add Customer</button>
+        </form>
+
+        <div if.bind="customers.length > 0">
+            <h4>Customers</h4>
+            <hr />
+            <table class="u-full-width">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr repeat.for="customer of customers">
+                        <td>${customer.name}</td>
+                        <td>${customer.age}</td>
+                        <td>${customer.phone}</td>
+                        <td>${customer.email}</td>
+                        <td>
+                            <button type="click" click.trigger="removeCustomer(customer)">Remove</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div if.bind="customers.length === 0">
+            <h4>Customers</h4>
+            <hr />
+            <p class="alert alert-info">No customers available</p>
+        </div>
+    </div>
+    <!-- ./Body content -->
+
+</template>
