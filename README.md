@@ -10,4 +10,4 @@
 - Run using command: htp-server
 - On application runtime, for view update: https://stackoverflow.com/questions/34473172/cannot-refresh-content-in-browser-using-http-server-with-aurelia 
 
-<img src="">
+<img src="https://github.com/MohammedDeveloper/aurelia-js-poc/blob/master/demo.PNG">
